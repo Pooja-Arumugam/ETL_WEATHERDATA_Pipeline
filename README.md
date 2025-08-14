@@ -137,15 +137,12 @@ timestamp TIMESTAMP (auto-generated)
 from datetime import datetime, timedelta
 default_args = {'owner': 'airflow', 'start_date': datetime.now() - timedelta(days=1)}
 ```
-schedule_interval error:
-
-Replace schedule_interval with schedule in DAG constructor for Airflow 2.5+:
-
-with DAG(dag_id='weather_etl_pipeline', default_args=default_args, schedule='@daily', catchup=False) as dag:
-Project Structure
-bash
-Copy
-Edit
+## schedule_interval error:
+- Replace schedule_interval with schedule in DAG constructor for Airflow 2.5+:
+- with DAG(dag_id='weather_etl_pipeline', default_args=default_args, schedule='@daily', catchup=False) as dag:
+---
+## Project Structure
+```
 Airflow/
 ├── dags/
 │   └── etlweather.py          # Main DAG file
@@ -153,21 +150,19 @@ Airflow/
 ├── docker-compose.yaml        # Optional, if using Docker Compose
 ├── .env                       # Environment variables
 └── README.md                  # Project documentation
-Notes
-Airflow 2.5+ introduced breaking changes: days_ago removed, schedule_interval → schedule.
 
-All tasks are idempotent — rerunning DAG inserts new rows without affecting previous runs.
-
-Use this setup to extend ETL pipelines for additional cities or data sources.
-
-✅ References
-Airflow Official Docs
-
-PostgreSQL Docs
-
-Open-Meteo API
-
-Astronomer Docs
+```
+---
+## Notes
+- Airflow 2.5+ introduced breaking changes: days_ago removed, schedule_interval → schedule.
+- All tasks are idempotent — rerunning DAG inserts new rows without affecting previous runs.
+- Use this setup to extend ETL pipelines for additional cities or data sources.
+ ---
+  ## References
+  - Airflow Official Docs
+  - PostgreSQL Docs
+  - Open-Meteo API
+  - Astronomer Docs
 
 
 
