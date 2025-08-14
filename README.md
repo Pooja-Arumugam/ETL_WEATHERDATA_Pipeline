@@ -3,6 +3,16 @@
 This project demonstrates a complete **ETL (Extract, Transform, Load) pipeline** using **Apache Airflow** and **PostgreSQL**, running inside Docker containers via **Astronomer (Astro)**. The pipeline extracts weather data from the Open-Meteo API, transforms it, and loads it into a PostgreSQL database.
 
 ---
+## Why I built this project - Business Purpose
+Accurate and timely weather data can significantly influence **business operations and decision-making** in industries like logistics, retail, energy, and agriculture.  
+This pipeline was built to demonstrate **how enterprises can automate external data collection** and integrate it into a centralized data store for further analysis, enabling:
+
+- **Operational Optimization** – Adjusting supply chain routes or schedules based on weather forecasts.  
+- **Risk Mitigation** – Predicting and preparing for adverse weather events that can impact service delivery.  
+- **Data-Driven Insights** – Integrating weather patterns with sales, transportation, or production data for predictive analytics.  
+- **Scalable Infrastructure** – Seamlessly handling higher data volumes as the business grows.
+
+
 
 ## Table of Contents
 
@@ -153,6 +163,15 @@ Airflow/
 └── README.md                  # Project documentation
 
 ```
+---
+## Impact
+Implementing this ETL pipeline delivers measurable business value:
+
+- **Operational Efficiency** – Eliminates manual data collection, saving hours of analyst time weekly.
+- **Cost Reduction** – Reduces reliance on third-party weather data providers by automating direct API ingestion.
+- **Revenue Protection** – Enables proactive adjustments to operations based on weather predictions, minimizing delays and losses.
+- **Faster Insights** – Data is available in PostgreSQL in near real-time, empowering quick decision-making for operations and strategy teams.
+- **Scalability** – Built on Airflow, allowing the pipeline to scale to multiple locations and additional data points without significant rework.
 ---
 ## Notes
 - Airflow 2.5+ introduced breaking changes: days_ago removed, schedule_interval → schedule.
