@@ -29,11 +29,12 @@ The `weather_etl_pipeline` DAG performs the following steps:
 ---
 
 ## Architecture
+```text
 
 +--------------------+ +-----------------+ +------------------+
 | Open-Meteo API | ---> | Airflow DAG | ---> | PostgreSQL DB |
 +--------------------+ +-----------------+ +------------------+
-
+```
 ---
 
 
